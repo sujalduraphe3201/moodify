@@ -1,11 +1,10 @@
 require("dotenv").config();
-const app = require("./src/app");
-const dbConnect = require("./src/utils/database");
-const authRoutes = require("./src/routes/auth.routes");
+const app = require("./src/app")
+const connectToDB = require("./src/config/database");
 
-dbConnect()
 
-app.use("/api/auth", authRoutes);
-app.listen(process.env.PORT, () => {
-    console.log(`Server is running on ${process.env.PORT}`);
+connectToDB();
+
+app.listen(3000, () => {
+    console.log("Server is running on port 3000");
 })
