@@ -1,0 +1,134 @@
+.home {
+    min-height: 100vh;
+    background: #0d0d0d;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 90px;
+
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 24px 32px;
+        gap: 24px;
+    }
+
+    &__title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        text-align: center;
+    }
+
+    &__title-accent {
+        background: linear-gradient(135deg, #dd4200 0%, #ff6b35 50%, #ff8c42 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    &__subtitle {
+        font-size: 0.95rem;
+        color: #666;
+        text-align: center;
+        margin-top: -12px;
+        letter-spacing: 0.01em;
+    }
+
+    &__camera-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 20px;
+        padding: 28px;
+        max-width: 480px;
+        width: 100%;
+    }
+}
+
+/* ── FaceExpression overrides ── */
+.face-expr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    &__video-wrap {
+        position: relative;
+        width: 100%;
+        border-radius: 14px;
+        overflow: hidden;
+        background: #000;
+    }
+
+    &__video {
+        width: 100%;
+        display: block;
+        transform: scaleX(-1);
+        border-radius: 14px;
+    }
+
+    &__mood {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #f0f0f0;
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #dd4200;
+            display: inline-block;
+            animation: blink 1.4s ease-in-out infinite;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: #dd4200;
+        color: #fff;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 12px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.15s;
+        letter-spacing: 0.01em;
+
+        &:hover {
+            background: #ff5215;
+            transform: translateY(-1px);
+        }
+
+        &:active {
+            transform: scale(0.97);
+        }
+    }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+@media (max-width: 520px) {
+    .home {
+        &__title {
+            font-size: 1.6rem;
+        }
+        &__camera-card {
+            padding: 16px;
+            border-radius: 14px;
+        }
+    }
+}
