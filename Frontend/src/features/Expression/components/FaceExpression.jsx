@@ -36,7 +36,7 @@ export default function FaceExpression({ onClick = () => { } }) {
         <div style={{ textAlign: "center" }}>
             <video
                 ref={videoRef}
-                style={{ width: "400px", borderRadius: "12px", transform: "scaleX(-1)" }}
+                style={{ width: "400px", borderRadius: "12px", transform: "scale(-1, 1)" }}
                 playsInline
             />
             <h2>{expression}</h2>
